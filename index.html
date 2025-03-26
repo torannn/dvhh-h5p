@@ -2,41 +2,108 @@
 <head>
   <title>Math Test Questions</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
+      font-family: 'Poppins', Arial, sans-serif;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: #f9f9f9;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      color: #333;
+      line-height: 1.6;
     }
     h1 {
-      color: #333;
+      color: #2c3e50;
       text-align: center;
-    }
-    h2 {
-      color: #444;
-      margin-top: 20px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
     p {
-      color: #555;
+      color: #7f8c8d;
       text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #34495e;
+      font-size: 1.8em;
+      margin: 20px 0 10px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #9b59b6);
+      bottom: 0;
+      left: 0;
+      border-radius: 2px;
+    }
+    .test-section {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .test-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
     ul {
       list-style-type: none;
       padding: 0;
     }
     li {
-      margin: 10px 0;
+      margin: 15px 0;
     }
     a {
       text-decoration: none;
-      color: #007bff;
-      font-size: 18px;
+      color: #3498db;
+      font-size: 1.2em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
     }
     a:hover {
-      text-decoration: underline;
-      color: #0056b3;
+      background: #3498db;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+    a::before {
+      content: '📘';
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+    .placeholder {
+      color: #95a5a6;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      a {
+        font-size: 1em;
+        padding: 8px 12px;
+      }
+      .test-section {
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -44,15 +111,19 @@
   <h1>Math Test Questions</h1>
   <p>Select the test and question you want to view:</p>
 
-  <h2>Đề số 1</h2>
-  <ul>
-    <li><a href="h5p_folder/Đề số 1/Câu 1/">Câu 1</a></li>
-    <li><a href="h5p_folder/Đề số 1/Câu 2/">Câu 2</a></li>
-  </ul>
+  <div class="test-section">
+    <h2>Đề số 1</h2>
+    <ul>
+      <li><a href="h5p_folder/Đề số 1/Câu 1/">Câu 1</a></li>
+      <li><a href="h5p_folder/Đề số 1/Câu 2/">Câu 2</a></li>
+    </ul>
+  </div>
 
-  <h2>Đề số 2</h2>
-  <ul>
-    <li>No questions available yet.</li>
-  </ul>
+  <div class="test-section">
+    <h2>Đề số 2</h2>
+    <ul>
+      <li class="placeholder">No questions available yet.</li>
+    </ul>
+  </div>
 </body>
 </html>
