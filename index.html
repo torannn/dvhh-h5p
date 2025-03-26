@@ -1,19 +1,14 @@
 <html>
 <head>
-  <title>Your H5P Standalone Website Title</title>
-  <link type="text/css" rel="stylesheet" media="all" href="./dist/styles/h5p.css" />
-  <meta charset="utf-8" />
-  <script type="text/javascript" src="./dist/main.bundle.js"></script>
+  <title>Math Test Questions</title>
+  <meta charset="utf-8">
 </head>
 <body>
-  <div id="h5p-container"></div>
-  <script type="text/javascript">
-    const { H5P } = H5PStandalone;
-    new H5P(document.getElementById('h5p-container'), {
-      h5pJsonPath: 'h5p_folder',
-      frameJs: './dist/frame.bundle.js',
-      frameCSS: './dist/styles/h5p.css',
-    });
-  </script>
+  <h1>Math Test Questions</h1>
+  <p>Select the question you want to view:</p>
+  <ul>
+    <li><a href="h5p_folder/Câu 1/">Câu 1</a></li>
+    <li><a href="h5p_folder/Câu 2/">Câu 2</a></li>
+  </ul>
 </body>
 </html>
