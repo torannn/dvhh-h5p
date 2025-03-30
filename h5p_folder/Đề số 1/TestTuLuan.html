@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tự luận Toán - Tương tác chi tiết</title>
+    <!-- Tải MathJax từ CDN -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #2980b9;
+        }
+        h3 {
+            color: #e67e22;
+        }
+        .question {
+            margin-bottom: 20px;
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+        .input-box {
+            margin: 10px 0;
+            display: inline-block;
+        }
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 60px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .feedback {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bài tập tự luận Toán - Điền đáp án chi tiết</h1>
+
+    <!-- Câu 17 -->
+    <div id="q17" class="question active">
+        <h2>Câu 17 (1,5 điểm)</h2>
+        <h3>a) Tính giá trị của biểu thức \(A = a^2 - b\)</h3>
+        <p>Cho: \(a = \sqrt{75} + 2\sqrt{\frac{3}{4}} - 3\sqrt{48}\), \(b = \sqrt[3]{27} + \sqrt[3]{125} - \frac{1}{7}\sqrt[3]{343}\).</p>
+        <p>1. Tính \(a\):</p>
+        <div class="input-box">
+            <p>\(\sqrt{75} = \) <input type="text" id="a17a1"> \(\sqrt{\) <input type="text" id="a17a2"> \(\}\)</p>
+            <button onclick="checkAnswer('a17a1', '5', 'a17a2', '3', 'q17a1')">Kiểm tra</button>
+            <div id="feedback-a17a1" class="feedback"></div>
+        </div>
+        <div id="q17a1" class="question">
+            <div class="input-box">
+                <p>\(2\sqrt{\frac{3}{4}} = \) <input type="text" id="a17a3"> \(\sqrt{\) <input type="text" id="a17a4"> \(\}\)</p>
+                <button onclick="checkAnswer('a17a3', '1', 'a17a4', '3', 'q17a2')">Kiểm tra</button>
+                <div id="feedback-a17a3" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17a2" class="question">
+            <div class="input-box">
+                <p>\(3\sqrt{48} = \) <input type="text" id="a17a5"> \(\sqrt{\) <input type="text" id="a17a6"> \(\}\)</p>
+                <button onclick="checkAnswer('a17a5', '12', 'a17a6', '3', 'q17a3')">Kiểm tra</button>
+                <div id="feedback-a17a5" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17a3" class="question">
+            <p>\(a = 5\sqrt{3} + \sqrt{3} - 12\sqrt{3} = \) <input type="text" id="a17a7"> <button onclick="checkAnswer('a17a7', '-6\\sqrt{3}', null, null, 'q17a4')">Kiểm tra</button></p>
+            <div id="feedback-a17a7" class="feedback"></div>
+        </div>
+        <div id="q17a4" class="question">
+            <p>2. Tính \(b\):</p>
+            <div class="input-box">
+                <p>\(\sqrt[3]{27} = \) <input type="text" id="a17b1"> <button onclick="checkAnswer('a17b1', '3', null, null, 'q17b1')">Kiểm tra</button></p>
+                <div id="feedback-a17b1" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17b1" class="question">
+            <div class="input-box">
+                <p>\(\sqrt[3]{125} = \) <input type="text" id="a17b2"> <button onclick="checkAnswer('a17b2', '5', null, null, 'q17b2')">Kiểm tra</button></p>
+                <div id="feedback-a17b2" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17b2" class="question">
+            <div class="input-box">
+                <p>\(\frac{1}{7}\sqrt[3]{343} = \) <input type="text" id="a17b3"> <button onclick="checkAnswer('a17b3', '1', null, null, 'q17b3')">Kiểm tra</button></p>
+                <div id="feedback-a17b3" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17b3" class="question">
+            <p>\(b = 3 + 5 - 1 = \) <input type="text" id="a17b4"> <button onclick="checkAnswer('a17b4', '7', null, null, 'q17b4')">Kiểm tra</button></p>
+            <div id="feedback-a17b4" class="feedback"></div>
+        </div>
+        <div id="q17b4" class="question">
+            <p>3. Tính \(A\):</p>
+            <div class="input-box">
+                <p>\(a^2 = (-6\sqrt{3})^2 = \) <input type="text" id="a17c1"> <button onclick="checkAnswer('a17c1', '108', null, null, 'q17c1')">Kiểm tra</button></p>
+                <div id="feedback-a17c1" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q17c1" class="question">
+            <p>\(A = 108 - 7 = \) <input type="text" id="a17c2"> <button onclick="checkAnswer('a17c2', '101', null, null, 'q18')">Kiểm tra</button></p>
+            <div id="feedback-a17c2" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Câu 18 -->
+    <div id="q18" class="question">
+        <h2>Câu 18 (2,0 điểm)</h2>
+        <h3>a) Chứng minh \(x^2 - 5x + 3 = 0\) có 2 nghiệm và tính \(x_1^2 + x_2^2\)</h3>
+        <p>1. Tính \(\Delta\):</p>
+        <div class="input-box">
+            <p>\((-5)^2 = \) <input type="text" id="a18a1"> <button onclick="checkAnswer('a18a1', '25', null, null, 'q18a1')">Kiểm tra</button></p>
+            <div id="feedback-a18a1" class="feedback"></div>
+        </div>
+        <div id="q18a1" class="question">
+            <div class="input-box">
+                <p>\(4 \cdot 1 \cdot 3 = \) <input type="text" id="a18a2"> <button onclick="checkAnswer('a18a2', '12', null, null, 'q18a2')">Kiểm tra</button></p>
+                <div id="feedback-a18a2" class="feedback"></div>
+            </div>
+        </div>
+        <div id="q18a2" class="question">
+            <p>\(\Delta = 25 - 12 = \) <input type="text" id="a18a3"> <button onclick="checkAnswer('a18a3', '13', null, null, 'q18a3')">Kiểm tra</button></p>
+            <div id="feedback-a18a3" class="feedback"></div>
+        </div>
+        <div id="q18a3" class="question">
+            <p>2. \(x_1 + x_2 = -\frac{b}{a} = \) <input type="text" id="a18b1"> <button onclick="checkAnswer('a18b1', '5', null, null, 'q18b1')">Kiểm tra</button></p>
+            <div id="feedback-a18b1" class="feedback"></div>
+        </div>
+        <div id="q18b1" class="question">
+            <p>\(x_1 \cdot x_2 = \frac{c}{a} = \) <input type="text" id="a18b2"> <button onclick="checkAnswer('a18b2', '3', null, null, 'q18b2')">Kiểm tra</button></p>
+            <div id="feedback-a18b2" class="feedback"></div>
+        </div>
+        <div id="q18b2" class="question">
+            <p>\(x_1^2 + x_2^2 = 5^2 - 2 \cdot 3 = \) <input type="text" id="a18b3"> <button onclick="checkAnswer('a18b3', '19', null, null, 'q19')">Kiểm tra</button></p>
+            <div id="feedback-a18b3" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Câu 19 -->
+    <div id="q19" class="question">
+        <h2>Câu 19 (1,5 điểm)</h2>
+        <h3>a) Tính số đo cung lớn \(\widehat{AD}\)</h3>
+        <p>1. \(\widehat{BMC} = 60^\circ\), cung nhỏ \(\widehat{AD} = 60^\circ\).</p>
+        <div class="input-box">
+            <p>Cung lớn \(\widehat{AD} = 360^\circ - 60^\circ = \) <input type="text" id="a19a1"> <button onclick="checkAnswer('a19a1', '300', null, null, 'q20')">Kiểm tra</button></p>
+            <div id="feedback-a19a1" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Câu 20 -->
+    <div id="q20" class="question">
+        <h2>Câu 20 (1,0 điểm)</h2>
+        <h3>a) Tính xác suất không chọn thí sinh CLB Toán học</h3>
+        <p>1. Số thí sinh điểm \(\geq 8\): \(11 + 5 = \) <input type="text" id="a20a1"> <button onclick="checkAnswer('a20a1', '16', null, null, 'q20a1')">Kiểm tra</button></p>
+        <div id="feedback-a20a1" class="feedback"></div>
+        <div id="q20a1" class="question">
+            <p>2. Số thí sinh không thuộc CLB: \(16 - 3 = \) <input type="text" id="a20a2"> <button onclick="checkAnswer('a20a2', '13', null, null, 'q20a2')">Kiểm tra</button></p>
+            <div id="feedback-a20a2" class="feedback"></div>
+        </div>
+        <div id="q20a2" class="question">
+            <p>\(P(A) = \frac{13}{16}\)</p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(inputId1, correctAnswer1, inputId2, correctAnswer2, nextQuestionId) {
+            const input1 = document.getElementById(inputId1);
+            const input2 = inputId2 ? document.getElementById(inputId2) : null;
+            const feedback = document.getElementById(`feedback-${inputId1}`);
+            const userAnswer1 = input1.value.trim();
+            const userAnswer2 = input2 ? input2.value.trim() : null;
+            const nextQuestion = nextQuestionId ? document.getElementById(nextQuestionId) : null;
+
+            const correctAnswerText1 = correctAnswer1.replace(/\\sqrt/g, '√').replace(/\\frac{(\d+)}{(\d+)}/g, '$1/$2');
+            const correctAnswerText2 = correctAnswer2 ? correctAnswer2.replace(/\\sqrt/g, '√').replace(/\\frac{(\d+)}{(\d+)}/g, '$1/$2') : null;
+
+            let isCorrect = false;
+
+            if (input2) {
+                isCorrect = (userAnswer1 === correctAnswer1 || userAnswer1 === correctAnswerText1) && 
+                            (userAnswer2 === correctAnswer2 || userAnswer2 === correctAnswerText2);
+            } else {
+                isCorrect = (userAnswer1 === correctAnswer1 || userAnswer1 === correctAnswerText1);
+            }
+
+            if (isCorrect) {
+                feedback.textContent = "Đúng! Tiếp tục nhé.";
+                feedback.className = "feedback correct";
+                input1.disabled = true;
+                if (input2) input2.disabled = true;
+                if (nextQuestion) {
+                    nextQuestion.classList.add("active");
+                }
+            } else {
+                feedback.textContent = "Sai rồi! Thử lại nhé.";
+                feedback.className = "feedback incorrect";
+                input1.value = "";
+                if (input2) input2.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

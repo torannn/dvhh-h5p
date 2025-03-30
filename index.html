@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Math Test Questions</title>
@@ -73,21 +74,51 @@
       padding: 10px 15px;
       border-radius: 8px;
       transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
     }
     a:hover {
       background: #3498db;
       color: #ffffff;
       transform: scale(1.05);
     }
-    a::before {
+    /* Icon cho các nút thông thường */
+    a[href$=".pdf"]::before {
+      content: '📄';
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+    a[href$="TracNghiem.html"]::before {
+      content: '✏️';
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+    /* Icon cho nút Tự luận */
+    .essay-toggle::before {
       content: '📘';
       margin-right: 8px;
       font-size: 1.2em;
+      transition: all 0.3s ease;
+    }
+    .essay-toggle.open::before {
+      content: '📖';
     }
     .placeholder {
       color: #95a5a6;
       font-style: italic;
       font-size: 1.1em;
+    }
+    .essay-questions {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-left: 30px;
+    }
+    .essay-questions.open {
+      max-height: 500px;
+    }
+    .essay-question-item a::before {
+      content: '📝';
+      margin-right: 8px;
     }
     /* Responsive Design */
     @media (max-width: 600px) {
@@ -114,9 +145,18 @@
   <div class="test-section">
     <h2>Đề số 1</h2>
     <ul>
-      <li><a href="h5p_folder/Đề số 1/Câu 1/">Câu 1</a></li>
-      <li><a href="h5p_folder/Đề số 1/Câu 2/">Câu 2</a></li>
+      <li><a href="GiaiDe/De1/Đề 1. Quảng Bình.pdf">Đề bài</a></li>
+      <li><a href="GiaiDe/De1/TracNghiem.html">Trắc nghiệm</a></li>
+      <li><a class="essay-toggle">Tự luận</a></li>
     </ul>
+    <div class="essay-questions" id="essay-questions">
+      <ul>
+        <li class="essay-question-item"><a href="https://www.mathmatize.com/embed/exercises/9211518a-f854-473a-8735-c8ee738f6868/" target="_blank">Câu 17</a></li>
+        <li class="essay-question-item"><a href="https://www.mathmatize.com/embed/exercises/e678f8d4-bbed-4c79-8789-e291a6086521/" target="_blank">Câu 18</a></li>
+        <li class="essay-question-item"><a href="https://www.mathmatize.com/embed/exercises/0b7802e2-3973-4749-b314-26b989fe6277/" target="_blank">Câu 19</a></li>
+        <li class="essay-question-item"><a href="https://www.mathmatize.com/embed/exercises/41a278ba-d9af-4072-80fa-5dc36b80f4a5/" target="_blank">Câu 20</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="test-section">
@@ -125,5 +165,17 @@
       <li class="placeholder">No questions available yet.</li>
     </ul>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.querySelector('.essay-toggle');
+      const essayQuestions = document.getElementById('essay-questions');
+      
+      toggleButton.addEventListener('click', function() {
+        this.classList.toggle('open');
+        essayQuestions.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>

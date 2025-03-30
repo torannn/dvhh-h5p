@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tự luận - Đề số 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #34495e;
+      font-size: 1.8em;
+      margin: 20px 0 10px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #9b59b6);
+      bottom: 0;
+      left: 0;
+      border-radius: 2px;
+    }
+    .question-section {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .question-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .question-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .question-list button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      font-weight: 500;
+      color: #3498db;
+      background: #f0f0f0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+    .question-list button:hover {
+      background: #3498db;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+    .question-content {
+      display: none;
+    }
+    .question-content.active {
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 500px; /* Tăng từ 400px lên 500px */
+      border: none;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      .question-list button {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+      .question-section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Tự luận - Đề số 1</h1>
+
+  <div class="question-section">
+    <h2>Chọn câu hỏi</h2>
+    <div class="question-list">
+      <button onclick="showQuestion(17)">Câu 17</button>
+      <button onclick="showQuestion(18)">Câu 18</button>
+      <button onclick="showQuestion(19)">Câu 19</button>
+      <button onclick="showQuestion(20)">Câu 20</button>
+    </div>
+
+    <div id="q17" class="question-content active">
+      <h2>Câu 17</h2>
+      <iframe src="https://www.mathmatize.com/embed/exercises/9211518a-f854-473a-8735-c8ee738f6868/" title="MathMatize"></iframe>
+    </div>
+
+    <div id="q18" class="question-content">
+      <h2>Câu 18</h2>
+      <iframe src="https://www.mathmatize.com/embed/exercises/e678f8d4-bbed-4c79-8789-e291a6086521/" title="MathMatize"></iframe>
+    </div>
+
+    <div id="q19" class="question-content">
+      <h2>Câu 19</h2>
+      <iframe src="https://www.mathmatize.com/embed/exercises/0b7802e2-3973-4749-b314-26b989fe6277/" title="MathMatize"></iframe>
+    </div>
+
+    <div id="q20" class="question-content">
+      <h2>Câu 20</h2>
+      <iframe src="https://www.mathmatize.com/embed/exercises/41a278ba-d9af-4072-80fa-5dc36b80f4a5/" title="MathMatize"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function showQuestion(questionNumber) {
+      // Ẩn tất cả các nội dung câu hỏi
+      document.querySelectorAll('.question-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      // Hiển thị câu hỏi được chọn
+      const selectedQuestion = document.getElementById(`q${questionNumber}`);
+      selectedQuestion.classList.add('active');
+      // Cuộn mượt mà đến iframe
+      selectedQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Mặc định hiển thị và cuộn đến câu 17 khi tải trang
+    showQuestion(17);
+  </script>
+</body>
+</html>

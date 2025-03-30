@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tự luận Toán - Tương tác</title>
+    <!-- Tải MathJax từ CDN -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #2980b9;
+        }
+        h3 {
+            color: #e67e22;
+        }
+        .question {
+            margin-bottom: 20px;
+            display: none; /* Ẩn ban đầu */
+        }
+        .question.active {
+            display: block; /* Hiển thị khi kích hoạt */
+        }
+        .input-box {
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .feedback {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bài tập tự luận Toán - Điền đáp án</h1>
+
+    <!-- Câu 17 -->
+    <div id="q17" class="question active">
+        <h2>Câu 17 (1,5 điểm)</h2>
+        <h3>a) Tính giá trị của biểu thức \(A = a^2 - b\)</h3>
+        <p>Cho: \(a = \sqrt{75} + 2\sqrt{\frac{3}{4}} - 3\sqrt{48}\), \(b = \sqrt[3]{27} + \sqrt[3]{125} - \frac{1}{7}\sqrt[3]{343}\).</p>
+        <p>1. Tính \(a\): \(\sqrt{75} = 5\sqrt{3}\), \(2\sqrt{\frac{3}{4}} = \sqrt{3}\), \(3\sqrt{48} = 12\sqrt{3}\).</p>
+        <p>\(a = 5\sqrt{3} + \sqrt{3} - 12\sqrt{3} = \) <input type="text" id="a17a"> <button onclick="checkAnswer('a17a', '-6\\sqrt{3}', 'q17a')">Kiểm tra</button></p>
+        <div id="feedback-a17a" class="feedback"></div>
+        
+        <div id="q17a" class="question">
+            <p>2. Tính \(b\): \(\sqrt[3]{27} = 3\), \(\sqrt[3]{125} = 5\), \(\frac{1}{7}\sqrt[3]{343} = 1\).</p>
+            <p>\(b = 3 + 5 - 1 = \) <input type="text" id="a17b"> <button onclick="checkAnswer('a17b', '7', 'q17b')">Kiểm tra</button></p>
+            <div id="feedback-a17b" class="feedback"></div>
+        </div>
+        
+        <div id="q17b" class="question">
+            <p>3. Tính \(A = a^2 - b\): \(a^2 = (-6\sqrt{3})^2 = 108\), \(A = 108 - 7 = \) <input type="text" id="a17c"> <button onclick="checkAnswer('a17c', '101', 'q18')">Kiểm tra</button></p>
+            <div id="feedback-a17c" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Câu 18 -->
+    <div id="q18" class="question">
+        <h2>Câu 18 (2,0 điểm)</h2>
+        <h3>a) Chứng minh \(x^2 - 5x + 3 = 0\) có 2 nghiệm và tính \(x_1^2 + x_2^2\)</h3>
+        <p>1. Tính \(\Delta = b^2 - 4ac = (-5)^2 - 4 \cdot 1 \cdot 3 = \) <input type="text" id="a18a"> <button onclick="checkAnswer('a18a', '13', 'q18a')">Kiểm tra</button></p>
+        <div id="feedback-a18a" class="feedback"></div>
+        
+        <div id="q18a" class="question">
+            <p>2. \(x_1 + x_2 = 5\), \(x_1 \cdot x_2 = 3\), \(x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2 = \) <input type="text" id="a18b"> <button onclick="checkAnswer('a18b', '19', 'q19')">Kiểm tra</button></p>
+            <div id="feedback-a18b" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Câu 19 -->
+    <div id="q19" class="question">
+        <h2>Câu 19 (1,5 điểm)</h2>
+        <h3>a) Tính số đo cung lớn \(\widehat{AD}\)</h3>
+        <p>\(\widehat{BMC} = 60^\circ\), cung lớn \(\widehat{AD} = 360^\circ - 60^\circ = \) <input type="text" id="a19a"> <button onclick="checkAnswer('a19a', '300', 'q20')">Kiểm tra</button></p>
+        <div id="feedback-a19a" class="feedback"></div>
+    </div>
+
+    <!-- Câu 20 -->
+    <div id="q20" class="question">
+        <h2>Câu 20 (1,0 điểm)</h2>
+        <h3>a) Tính xác suất không chọn thí sinh CLB Toán học</h3>
+        <p>Số thí sinh điểm \(\geq 8\): 16, không thuộc CLB: 13. \(P(A) = \) <input type="text" id="a20a"> <button onclick="checkAnswer('a20a', '\\frac{13}{16}')">Kiểm tra</button></p>
+        <div id="feedback-a20a" class="feedback"></div>
+    </div>
+
+    <script>
+        function checkAnswer(inputId, correctAnswer, nextQuestionId) {
+            const input = document.getElementById(inputId);
+            const feedback = document.getElementById(`feedback-${inputId}`);
+            const userAnswer = input.value.trim();
+            const nextQuestion = document.getElementById(nextQuestionId);
+
+            // Chuyển đổi đáp án đúng thành dạng hiển thị để so sánh
+            const correctAnswerText = correctAnswer.replace(/\\sqrt/g, '√').replace(/\\frac{(\d+)}{(\d+)}/g, '$1/$2');
+
+            if (userAnswer === correctAnswer || userAnswer === correctAnswerText) {
+                feedback.textContent = "Đúng! Tiếp tục nhé.";
+                feedback.className = "feedback correct";
+                input.disabled = true; // Khóa ô nhập
+                if (nextQuestion) {
+                    nextQuestion.classList.add("active"); // Hiển thị câu tiếp theo
+                }
+            } else {
+                feedback.textContent = "Sai rồi! Thử lại nhé.";
+                feedback.className = "feedback incorrect";
+                input.value = ""; // Xóa để nhập lại
+            }
+        }
+    </script>
+</body>
+</html>
