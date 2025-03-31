@@ -82,6 +82,11 @@
       transform: scale(1.05);
     }
     /* Icon cho các nút thông thường */
+    a[href*="docs.google.com/forms"]::before {
+      content: '📊';
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
     a[href$=".pdf"]::before {
       content: '📄';
       margin-right: 8px;
@@ -145,8 +150,9 @@
   <div class="test-section">
     <h2>Đề số 1</h2>
     <ul>
-      <li><a href="GiaiDe/De1/Đề 1. Quảng Bình.pdf">Đề bài</a></li>
-      <li><a href="GiaiDe/De1/TracNghiem.html">Trắc nghiệm</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf13yS73qMAWLZlDc8oTrh16L37Bb1dMZ_flZbzp9W6wdfABQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Báo cáo kết quả</a></li>
+      <li><a href="GiaiDe/De1/Đề 1. Quảng Bình.pdf" target="_blank" rel="noopener noreferrer">Đề bài</a></li>
+      <li><a href="GiaiDe/De1/TracNghiem.html" target="_blank" rel="noopener noreferrer">Trắc nghiệm</a></li>
       <li><a class="essay-toggle">Tự luận</a></li>
     </ul>
     <div class="essay-questions" id="essay-questions">
